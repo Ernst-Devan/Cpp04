@@ -7,7 +7,6 @@ class Brain
 {
     public:
     Brain();
-    Brain(std::string ideas[100]);
     Brain(const Brain& b);
     ~Brain();
     

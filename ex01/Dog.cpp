@@ -8,15 +8,11 @@ Dog::Dog()
     std::cout << "Dog default constructor called" << std::endl;
 };
 
-Dog::Dog(const std::string& type)
-{
-    this->_type = type;
-    std::cout << "Dog constructor called" << std::endl;
-};
-
 Dog::Dog(const Dog& a)
 {
     this->_type = a._type;
+    this->_Brain = new Brain();
+    this->_Brain->setIdeas(a.getBrain()->getIdeas());
     std::cout << "Dog copy constructor" << std::endl;
 }
 
@@ -25,6 +21,7 @@ Dog &Dog::operator=(const Dog& a)
     std::cout << "Dog operator = called" << std::endl;
     if (this == &a)
         return (*this);
+    this->_Brain->setIdeas(a.getBrain()->getIdeas());
     this->_type = a._type;
     return (*this);
 }
@@ -35,7 +32,7 @@ Dog::~Dog()
     std::cout << "Dog destructor called" << std::endl;
 }
 
-Brain *Dog::getBrain(void)
+Brain *Dog::getBrain(void) const
 {
     return (this->_Brain);
 }

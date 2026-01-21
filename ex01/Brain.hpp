@@ -7,11 +7,9 @@ class Brain
 {
     public:
     Brain();
-    Brain(std::string ideas[100]);
     Brain(const Brain& b);
-    ~Brain();
-    
     Brain &operator=(const Brain& b);
+    ~Brain();
     
     void        setIdeas(std::string ideas[100]);
     std::string *getIdeas(void);

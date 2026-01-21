@@ -19,6 +19,8 @@ AMateria::AMateria(AMateria const& a): _type(a._type)
 
 AMateria& AMateria::operator=(AMateria const& a)
 {
+    if (this == &a)
+        return (*this);
     this->_type = a._type;
     // std::cout <<"[AMateria] Operator = called" << std::endl;
     return (*this);

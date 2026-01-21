@@ -39,22 +39,22 @@ void limits_test()
 
 void constructor_test()
 {
-    ICharacter* me = new Character("me");
-    ICharacter* you = new Character("you");
+    std::cout << std::endl << std::endl << "------------CONSTRUCT TEST------------" << std::endl << std::endl;
 
-    AMateria* cure = new Cure();
-    me->equip(cure);
-    cure = new Cure();
-    me->equip(cure);
-     cure = new Cure();
-    me->equip(cure);
-     cure = new Cure();
-    me->equip(cure);
-    me->unequip(0);
-    *me = *you;
+
+    Character me =  Character("me");
+    Character you = Character("you");
     
-    delete me;
-    delete you;
+    me.equip(new Ice());
+    me.equip(new Ice());
+    me.equip(new Ice());
+    me.equip(new Ice());
+    me.unequip(0);
+    you = me;
+    you.equip(new Cure());
+    you.equip(new Cure());
+    me.equip(new Ice());
+    me.equip(new Ice());
 }
 
 void other_test()

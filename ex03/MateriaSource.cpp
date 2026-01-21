@@ -37,6 +37,8 @@ MateriaSource::MateriaSource(MateriaSource const& m)
 
 MateriaSource& MateriaSource::operator=(MateriaSource const& m)
 {
+    if (this == &m)
+        return (*this);
     this->_idx = 0;
     for(int i = 0; i< 4; i++)
     {

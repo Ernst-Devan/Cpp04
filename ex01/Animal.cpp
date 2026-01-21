@@ -6,11 +6,6 @@ Animal::Animal(): _type("Animal")
     std::cout << "Animal default constructor called" << std::endl;
 };
 
-Animal::Animal(const std::string& type): _type(type)
-{
-    std::cout << "Animal constructor called" << std::endl;
-};
-
 Animal::Animal(const Animal& a): _type(a._type)
 {
     std::cout << "Animal copy constructor" << std::endl;

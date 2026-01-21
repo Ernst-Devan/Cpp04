@@ -77,8 +77,39 @@ void deep_copy()
     return;
 }
 
+void    copy_brain()
+{
+
+     std::cout <<std::endl << "Copy Brain" << std::endl << std::endl;
+     
+    Cat *one = new Cat();
+
+    std::string idea[100];
+
+    for (int i = 0; i < 100; i++)
+    {
+        idea[i].append("a");
+    }
+    Cat *two = new Cat(*one);
+    one->getBrain()->setIdeas(idea);
+
+      for (int i = 0; i < 100; i++)
+    {
+        idea[i].append("b");
+    }
+    two->getBrain()->setIdeas(idea);
+    
+
+    std::cout << std::endl << std::endl << one->getBrain()->getIdeas()[0] << std::endl << std::endl;
+    std::cout << std::endl << std::endl << two->getBrain()->getIdeas()[0] << std::endl << std::endl;
+
+    delete one;
+    delete two;
+}
+
 int main()
 {
+    copy_brain();
     deep_copy();
     alloc_check();
     return 0;

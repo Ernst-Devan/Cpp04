@@ -15,6 +15,8 @@ Cure::Cure(Cure const& c)
 
 Cure& Cure::operator=(Cure const& c)
 {
+    if (this == &c)
+        return (*this);
     this->_type = c._type;
     // std::cout << "[Cure] Operator = called" << std::endl;
     return (*this);

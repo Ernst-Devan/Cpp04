@@ -9,13 +9,14 @@ class Cat : public Animal
 {
     public:
         Cat();
-        Cat(const std::string& type);
         Cat(const Cat& c);
         Cat &operator=(const Cat& a);
         ~Cat();
 
+        Brain *getBrain(void) const;
         std::string getType() const;
         void        makeSound(void) const;
+        
     private:
         Brain *_Brain;
 

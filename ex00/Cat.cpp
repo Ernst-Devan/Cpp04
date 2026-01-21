@@ -7,12 +7,6 @@ Cat::Cat()
     std::cout << "Cat default constructor called" << std::endl;
 };
 
-Cat::Cat(const std::string& type)
-{
-    this->_type = type;
-    std::cout << "Cat constructor called" << std::endl;
-};
-
 Cat::Cat(const Cat& a)
 {
     this->_type = a._type;

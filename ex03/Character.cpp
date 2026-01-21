@@ -49,6 +49,8 @@ Character::Character(Character const& c)
 
 Character& Character::operator=(Character const& c)
 {
+    if (this == &c)
+        return (*this);
     this->_name = c._name;
     for (int i = 0; i < 100; i++)
     {

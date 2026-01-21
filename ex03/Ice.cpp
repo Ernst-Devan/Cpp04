@@ -15,6 +15,8 @@ Ice::Ice(Ice const& i)
 
 Ice &Ice::operator=(Ice const& i)
 {
+    if (this == &i)
+        return (*this);
     this->_type = i._type;
     // std::cout << "[Ice] Operator = called" << std::endl;
     return (*this);

@@ -9,15 +9,11 @@ Cat::Cat()
     std::cout << "Cat default constructor called" << std::endl;
 };
 
-Cat::Cat(const std::string& type)
-{
-    this->_type = type;
-    std::cout << "Cat constructor called" << std::endl;
-};
-
 Cat::Cat(const Cat& a)
 {
     this->_type = a._type;
+    this->_Brain = new Brain();
+    this->_Brain->setIdeas(a.getBrain()->getIdeas());
     std::cout << "Cat copy constructor" << std::endl;
 }
 
@@ -26,6 +22,7 @@ Cat &Cat::operator=(const Cat& a)
     std::cout << "Cat operator = called" << std::endl;
     if (this == &a)
         return (*this);
+    this->_Brain->setIdeas(a.getBrain()->getIdeas());
     this->_type = a._type;
     return (*this);
 }
@@ -34,6 +31,11 @@ Cat::~Cat()
 {
     delete this->_Brain;
     std::cout << "Cat destructor called" << std::endl;
+}
+
+Brain *Cat::getBrain(void) const
+{
+    return (this->_Brain);
 }
 
 std::string Cat::getType() const
